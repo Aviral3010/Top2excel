@@ -1,0 +1,543 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+	<meta charset="UTF-8">
+	<meta http-equiv="X-UA-Compatible" content="IE=edge">
+	<meta name="viewport" content="width=device-width, initial-scale=1.0">
+	<title>Document</title>
+
+	<style>
+		@import url('https://fonts.googleapis.com/css?family=Muli&display=swap');
+
+		* {
+			box-sizing: border-box;
+		}
+
+
+		body {
+			background-image: url(jpg\contactpic.png);
+			font-family: 'Muli', sans-serif;
+
+			align-items: center;
+			justify-content: center;
+			flex-direction: column;
+			min-height: 100vh;
+			margin: 0;
+			background-repeat: no-repeat;
+			background-size: cover;
+			background-attachment: fixed;
+		}
+
+		.courses-container {
+			width: 100%;
+		}
+
+		.course {
+			background-color: #fff;
+			border-radius: 10px;
+			box-shadow: 0 10px 10px rgba(0, 0, 0, 0.2);
+			display: flex;
+			max-width: 100%;
+			margin: 20px;
+			overflow: hidden;
+			width: 100;
+			height: 230px;
+		}
+
+		.course h6 {
+			opacity: 0.6;
+			margin: 0;
+			letter-spacing: 1px;
+			text-transform: uppercase;
+		}
+
+		.course h2 {
+			letter-spacing: 1px;
+			margin: 10px 0;
+		}
+
+		.course-preview {
+			background-color: #2A265F;
+			color: #fff;
+			padding: 30px;
+			max-width: 1500px;
+			width: 1500px;
+		}
+
+		.course-preview a {
+			color: #fff;
+			display: inline-block;
+			font-size: 12px;
+			opacity: 0.6;
+			margin-top: 30px;
+			text-decoration: none;
+		}
+
+		.course-info {
+			padding: 30px;
+			position: relative;
+			width: 100%;
+		}
+
+
+		.progress::after {
+			border-radius: 3px;
+			background-color: #2A265F;
+			content: '';
+			position: absolute;
+			top: 0;
+			left: 0;
+			height: 5px;
+			width: 66%;
+		}
+
+		.progress-text {
+			font-size: 10px;
+			opacity: 0.6;
+			letter-spacing: 1px;
+		}
+
+		.btn {
+			background-color: #2A265F;
+			border: 0;
+			border-radius: 50px;
+			box-shadow: 0 10px 10px rgba(0, 0, 0, 0.2);
+			color: #fff;
+			font-size: 16px;
+			padding: 12px 25px;
+			position: fixed;
+			bottom: 30px;
+			right: 30px;
+			letter-spacing: 1px;
+		}
+
+
+
+		.floating-btn {
+			border-radius: 26.5px;
+			background-color: #001F61;
+			border: 1px solid #001F61;
+			box-shadow: 0 16px 22px -17px #03153B;
+			color: #fff;
+			cursor: pointer;
+			font-size: 16px;
+			line-height: 20px;
+			padding: 12px 20px;
+			position: fixed;
+			bottom: 20px;
+			right: 20px;
+			z-index: 999;
+		}
+
+		.floating-btn:hover {
+			background-color: #ffffff;
+			color: #001F61;
+		}
+
+		.floating-btn:focus {
+			outline: none;
+		}
+
+		.floating-text {
+			background-color: #001F61;
+			border-radius: 10px 10px 0 0;
+			color: #fff;
+			font-family: 'Muli';
+			padding: 7px 15px;
+			position: fixed;
+			bottom: 0;
+			left: 50%;
+			transform: translateX(-50%);
+			text-align: center;
+			z-index: 998;
+		}
+
+		.floating-text a {
+			color: #FF7500;
+			text-decoration: none;
+		}
+
+		@media screen and (max-width: 480px) {
+
+			.social-panel-container.visible {
+				transform: translateX(0px);
+			}
+
+			.floating-btn {
+				right: 10px;
+			}
+		}
+	</style>
+
+</head>
+
+
+<body>
+	<form method="post" action="/testSubmit/<%= test %> ">
+		<!-- <center>
+			<h2>Please enter your email before attempting the quiz
+				<input type="text" name="username">
+			</h2>
+		</center> -->
+		<div class="courses-container">
+			<div class="course">
+				<div class="course-preview">
+					<h6>Question 1</h6>
+					<h2>
+						<%= q1 %>
+					</h2>
+				</div>
+				<div class="course-info">
+					<h6>Options</h6>
+					<h5><input type="radio" name="qval1" value="0">
+						<label for="html">
+							<%= q1o1 %>
+						</label>
+					</h5>
+					<h5><input type="radio" name="qval1" value="1">
+						<label for="css">
+							<%= q1o2 %>
+						</label>
+					</h5>
+					<h5><input type="radio" name="qval1" value="2">
+						<label for="javascript">
+							<%= q1o3 %>
+						</label>
+					</h5>
+					<h5><input type="radio" name="qval1" value="3">
+						<label for="javascript">
+							<%= q1o4 %>
+						</label>
+					</h5>
+				</div>
+			</div>
+		</div>
+
+
+		<div class="courses-container">
+			<div class="course">
+				<div class="course-preview">
+					<h6>Question 2</h6>
+					<h2>
+						<%= q2 %>
+					</h2>
+				</div>
+				<div class="course-info">
+					<h6>Options</h6>
+					<h5><input type="radio" name="qval2" value="0">
+						<label for="html">
+							<%= q2o1 %>
+						</label>
+					</h5>
+					<h5><input type="radio" name="qval2" value="1">
+						<label for="css">
+							<%= q2o2 %>
+						</label>
+					</h5>
+					<h5><input type="radio" name="qval2" value="2">
+						<label for="javascript">
+							<%= q2o3 %>
+						</label>
+					</h5>
+					<h5><input type="radio" name="qval2" value="3">
+						<label for="javascript">
+							<%= q2o4 %>
+						</label>
+					</h5>
+				</div>
+
+			</div>
+		</div>
+
+		<div class="courses-container">
+			<div class="course">
+				<div class="course-preview">
+					<h6>Question 3</h6>
+					<h2>
+						<%= q3 %>
+					</h2>
+				</div>
+				<div class="course-info">
+					<h6>Options</h6>
+					<h5><input type="radio" name="qval3" value="0">
+						<label for="html">
+							<%= q3o1 %>
+						</label>
+					</h5>
+					<h5><input type="radio" name="qval3" value="1">
+						<label for="css">
+							<%= q3o2 %>
+						</label>
+					</h5>
+					<h5><input type="radio" name="qval3" value="2">
+						<label for="javascript">
+							<%= q3o3 %>
+						</label>
+					</h5>
+					<h5><input type="radio" name="qval3" value="3">
+						<label for="javascript">
+							<%= q3o4 %>
+						</label>
+					</h5>
+				</div>
+			</div>
+		</div>
+
+
+		<div class="courses-container">
+			<div class="course">
+				<div class="course-preview">
+					<h6>Question 4</h6>
+					<h2>
+						<%= q4 %>
+					</h2>
+				</div>
+				<div class="course-info">
+					<h6>Options</h6>
+					<h5><input type="radio" name="qval4" value="0">
+						<label for="html">
+							<%= q4o1 %>
+						</label>
+					</h5>
+					<h5><input type="radio" name="qval4" value="1">
+						<label for="css">
+							<%= q4o2 %>
+						</label>
+					</h5>
+					<h5><input type="radio" name="qval4" value="2">
+						<label for="javascript">
+							<%= q4o3 %>
+						</label>
+					</h5>
+					<h5><input type="radio" name="qval4" value="3">
+						<label for="javascript">
+							<%= q4o4 %>
+						</label>
+					</h5>
+				</div>
+			</div>
+		</div>
+
+
+		<div class="courses-container">
+			<div class="course">
+				<div class="course-preview">
+					<h6>Question 5</h6>
+					<h2>
+						<%= q5 %>
+					</h2>
+				</div>
+				<div class="course-info">
+					<h6>Options</h6>
+					<h5><input type="radio" name="qval5" value="0">
+						<label for="html">
+							<%= q5o1 %>
+						</label>
+					</h5>
+					<h5><input type="radio" name="qval5" value="1">
+						<label for="css">
+							<%= q5o2 %>
+						</label>
+					</h5>
+					<h5><input type="radio" name="qval5" value="2">
+						<label for="javascript">
+							<%= q5o3 %>
+						</label>
+					</h5>
+					<h5><input type="radio" name="qval5" value="3">
+						<label for="javascript">
+							<%= q5o4 %>
+						</label>
+					</h5>
+				</div>
+			</div>
+		</div>
+
+
+		<div class="courses-container">
+			<div class="course">
+				<div class="course-preview">
+					<h6>Question 6</h6>
+					<h2>
+						<%= q6 %>
+					</h2>
+				</div>
+				<div class="course-info">
+					<h6>Options</h6>
+					<h5><input type="radio" name="qval6" value="0">
+						<label for="html">
+							<%= q6o1 %>
+						</label>
+					</h5>
+					<h5><input type="radio" name="qval6" value="1">
+						<label for="css">
+							<%= q6o2 %>
+						</label>
+					</h5>
+					<h5><input type="radio" name="qval6" value="2">
+						<label for="javascript">
+							<%= q6o3 %>
+						</label>
+					</h5>
+					<h5><input type="radio" name="qval6" value="3">
+						<label for="javascript">
+							<%= q6o4 %>
+						</label>
+					</h5>
+				</div>
+			</div>
+		</div>
+
+
+	
+
+
+		<div class="courses-container">
+			<div class="course">
+				<div class="course-preview">
+					<h6>Question 7</h6>
+					<h2>
+						<%= q7 %>
+					</h2>
+				</div>
+				<div class="course-info">
+					<h6>Options</h6>
+					<h5><input type="radio" name="qval7" value="0">
+						<label for="html">
+							<%= q7o1 %>
+						</label>
+					</h5>
+					<h5><input type="radio" name="qval7" value="1">
+						<label for="css">
+							<%= q7o2 %>
+						</label>
+					</h5>
+					<h5><input type="radio" name="qval7" value="2">
+						<label for="javascript">
+							<%= q7o3 %>
+						</label>
+					</h5>
+					<h5><input type="radio" name="qval7" value="3">
+						<label for="javascript">
+							<%= q7o4 %>
+						</label>
+					</h5>
+				</div>
+			</div>
+		</div>
+
+
+
+		<div class="courses-container">
+			<div class="course">
+				<div class="course-preview">
+					<h6>Question 8</h6>
+					<h2>
+						<%= q8 %>
+					</h2>
+				</div>
+				<div class="course-info">
+					<h6>Options</h6>
+					<h5><input type="radio" name="qval8" value="0">
+						<label for="html">
+							<%= q8o1 %>
+						</label>
+					</h5>
+					<h5><input type="radio" name="qval8" value="1">
+						<label for="css">
+							<%= q8o2 %>
+						</label>
+					</h5>
+					<h5><input type="radio" name="qval8" value="2">
+						<label for="javascript">
+							<%= q8o3 %>
+						</label>
+					</h5>
+					<h5><input type="radio" name="qval8" value="3">
+						<label for="javascript">
+							<%= q8o4 %>
+						</label>
+					</h5>
+				</div>
+			</div>
+		</div>
+
+
+		<div class="courses-container">
+			<div class="course">
+				<div class="course-preview">
+					<h6>Question 9</h6>
+					<h2>
+						<%= q9 %>
+					</h2>
+				</div>
+				<div class="course-info">
+					<h6>Options</h6>
+					<h5><input type="radio" name="qval9" value="0">
+						<label for="html">
+							<%= q9o1 %>
+						</label>
+					</h5>
+					<h5><input type="radio" name="qval9" value="1">
+						<label for="css">
+							<%= q9o2 %>
+						</label>
+					</h5>
+					<h5><input type="radio" name="qval9" value="2">
+						<label for="javascript">
+							<%= q9o3 %>
+						</label>
+					</h5>
+					<h5><input type="radio" name="qval9" value="3">
+						<label for="javascript">
+							<%= q9o4 %>
+						</label>
+					</h5>
+				</div>
+			</div>
+		</div>
+
+
+		<div class="courses-container">
+			<div class="course">
+				<div class="course-preview">
+					<h6>Question 10</h6>
+					<h2>
+						<%= q10 %>
+					</h2>
+				</div>
+				<div class="course-info">
+					<h6>Options</h6>
+					<h5><input type="radio" name="qval4" value="0">
+						<label for="html">
+							<%= q10o1 %>
+						</label>
+					</h5>
+					<h5><input type="radio" name="qval4" value="1">
+						<label for="css">
+							<%= q10o2 %>
+						</label>
+					</h5>
+					<h5><input type="radio" name="qval4" value="2">
+						<label for="javascript">
+							<%= q10o3 %>
+						</label>
+					</h5>
+					<h5><input type="radio" name="qval10" value="3">
+						<label for="javascript">
+							<%= q10o4 %>
+						</label>
+					</h5>
+				</div>
+			</div>
+		</div>
+
+
+
+		<button type="submit" class="btn">Submit</button>
+
+	</form>
+</body>
+
+</html>

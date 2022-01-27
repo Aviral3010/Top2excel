@@ -1,0 +1,220 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <link rel="shortcut icon" href="jpg/logo.png" type="image/x-icon">
+  <title>Sign In</title>
+  <style>
+    @import url('https://fonts.googleapis.com/css2?family=Lobster&family=PT+Sans&display=swap');
+    @import url('https://fonts.googleapis.com/css2?family=Lobster&family=Oswald:wght@400;700&family=PT+Sans&display=swap');
+
+    body,
+    .signin {
+      background-color: #d3d3d3;
+      font-family: 'Montserrat', sans-serif;
+      color: #fff;
+      font-size: 14px;
+      letter-spacing: 1px;
+    }
+
+    .login {
+      position: relative;
+      height: 560px;
+      width: 405px;
+      margin: auto;
+      padding: 60px 60px;
+      background-color: rgb(15 15 15 / 93%);
+      box-shadow: 0px 30px 60px -5px #000;
+      border-radius: 10px;
+    }
+
+    form {
+      padding-top: 80px;
+    }
+
+    .active {
+      border-bottom: 2px solid #1161ed;
+      font-family: 'Lobster';
+
+    }
+
+
+
+    h2 {
+      padding-left: 12px;
+      font-size: 22px;
+      text-transform: uppercase;
+      padding-bottom: 5px;
+      letter-spacing: 2px;
+      display: inline-block;
+      font-weight: 100;
+    }
+
+    h2:first-child {
+      padding-left: 0px;
+    }
+
+    span {
+      font-family: 'PT Sans', sans-serif;
+      text-transform: uppercase;
+      font-size: 18px;
+      display: inline-block;
+      position: relative;
+      top: -65px;
+      transition: all 0.5s ease-in-out;
+    }
+
+    .text {
+      border: none;
+      width: 89%;
+      padding: 10px 20px;
+      display: block;
+      height: 15px;
+      border-radius: 20px;
+      background: rgba(255, 255, 255, 0.1);
+      border: 2px solid rgba(255, 255, 255, 0);
+      overflow: hidden;
+      margin-top: 15px;
+      transition: all 0.5s ease-in-out;
+    }
+
+    .text:focus {
+      outline: 0;
+      border: 2px solid rgba(194, 15, 15, 0.5);
+      border-radius: 20px;
+      background: rgba(0, 0, 0, 0);
+    }
+
+    .text:focus+span {
+      opacity: 0.6;
+    }
+
+    input[type="text"],
+    input[type="password"] {
+      font-family: 'Montserrat', sans-serif;
+      color: #fff;
+    }
+
+
+
+    input {
+      display: inline-block;
+      padding-top: 20px;
+      font-size: 14px;
+    }
+
+    h2,
+    span {
+      margin-left: 20px;
+    }
+
+
+
+
+    label {
+      display: inline-block;
+      padding-top: 10px;
+      padding-left: 5px;
+    }
+
+    .signin {
+      background-color: #1161ed;
+      color: #FFF;
+      width: 100%;
+      padding: 10px 20px;
+      display: block;
+      height: 39px;
+      border-radius: 20px;
+      margin-top: 30px;
+      transition: all 0.5s ease-in-out;
+      border: none;
+      text-transform: uppercase;
+    }
+
+    .signin:hover {
+      background: #095dee;
+      box-shadow: 0px 4px 35px -5px #4082f5;
+      cursor: pointer;
+    }
+
+
+
+    /* .signin:focus {
+  outline: none; 
+} */
+
+    hr {
+      border: 2px solid rgba(255, 255, 255, 0.1);
+      top: 85px;
+      position: relative;
+    }
+
+    a {
+      text-align: center;
+      display: block;
+      top: 126px;
+      position: relative;
+      text-decoration: none;
+      color: #fd06d4;
+
+    }
+
+    body {
+      background-image: url(jpg/bg.jpg);
+      /* background-repeat: no-repeat; */
+      /* background-size: 100% 100%; */
+      margin: 0px;
+      padding: 0px;
+      background-repeat: no-repeat;
+      background-size: cover;
+      background-attachment: fixed;
+
+
+      /* backdrop-filter: blur(10px) */
+    }
+  </style>
+</head>
+
+<body>
+
+
+  <div class="login">
+    <h2 class="active"> sign in </h2>
+
+
+    <form method="post" action="/login">
+
+
+
+      <input type="text" class="text" name="username">
+      <span>username</span>
+
+      <br>
+
+      <br>
+
+      <input type="password" class="text" name="password">
+      <span>password</span>
+      <br>
+
+
+      <!-- <a href="#">Forgot Password?</a> -->
+
+      <button class="signin" type="submit">
+        Sign In
+      </button>
+
+
+      <hr>
+      <a href="register.html">Register</a><br><br><br>
+
+    </form>
+    <p style="margin-top: 62px;">New candidate</p>
+
+  </div>
+</body>
+
+</html>
